@@ -1,0 +1,148 @@
+/* This file collates all SASS modules into a central place, then the 
+script defined in package.json compiles this file to main.css, miifies it 
+and removes comments. The script runs automatically when this file or related 
+files are chamged. It also holds general styles for the given page.
+*/
+
+@import 'modules/imports.scss';
+@import 'modules/vars.scss';
+@import 'modules/utils.scss';
+@import 'modules/layout.scss';
+@import 'modules/globals.scss';
+@import 'modules/typography.scss';
+@import 'modules/components.scss';
+
+// General styles
+
+.products {
+    background: $brandPrimary;
+    &_header {
+        margin-bottom: $blockSpaceLarge;
+        padding-bottom: $internalSpaceSmall;
+        @include lateralCompression;
+        &::after {
+            background: $brandPrimaryDarken;
+        }
+        h2 {
+            color: $brandAccent;
+        }
+        a {
+            color: $brandAccent;
+        }
+    }
+    &_carousel {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        div {
+            display: inline-block;
+            &:not(:last-of-type){
+                margin-right: 3rem;
+            }
+            > div {
+                display: flex;
+                flex-direction: column;
+                > img {
+                    width: 30rem;
+                    height: 30rem;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+                div {
+                    text-align: center;
+                    padding-top: $internalSpaceSmall;
+                    span {
+                        text-transform: uppercase;
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                    }
+                    h2 {
+                        margin: 1.5rem 0;
+                        color: $brandSoft;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.our-principles {
+    &_wrapper {
+        @include lateralCompression;
+        div:first-of-type {
+            @media screen and (max-width: $small) {
+                margin-bottom: $blockSpaceSmall;
+            }
+            h2, p, a {
+                color: $brandAccent;
+            }
+            p {
+                margin: $internalSpaceSmall 0;
+            }
+        }
+        div:last-of-type {
+            > img {
+                height: 40rem;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.adventure-subscription {
+    background: $brandAccent;
+    &_content {
+        @include lateralCompression;
+        h2 {
+            color: $brandPrimary;
+            &.minor {
+                width: 100%;
+                padding-bottom: calc(#{$internalSpaceSmall} / 2);
+                @media screen and (min-width: $medium) {
+                    padding-bottom: calc(#{$internalSpaceLarge} / 2);
+                }
+                &::after {
+                    background: $brandPrimaryDarken;
+                }
+            }
+            &.secondary {
+                padding: calc(#{$blockSpaceSmall} / 2) 0;
+                @media screen and (min-width: $medium) {
+                    padding: calc(#{$blockSpaceLarge} / 2) 0;
+                }
+            }
+        }
+    }
+}
+
+.our-partners {
+    background: $brandPrimary;
+    &_wrapper {
+        @include lateralCompression;
+    }
+}
+
+.blogs {
+    h2 {
+        text-align: center;
+        margin-bottom: $blockSpaceSmall;
+        @media screen and (min-width: $medium) {
+            margin-bottom: $blockSpaceLarge;
+        }
+    }
+    a {
+        margin: 0 auto;
+        background: $brandAccent;
+        color: $brandPrimary;
+        border-color: $brandAccent;
+        margin-top: $blockSpaceSmall;
+        @media screen and (min-width: $medium) {
+            margin-top: $blockSpaceLarge;
+        }
+        &:hover {
+            background: transparent;
+            color: $brandAccent;
+        }
+    }
+}

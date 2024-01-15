@@ -1,0 +1,88 @@
+/* This file contains mixins and classes responsible for 
+controlling the layout of the page and content */
+
+section, header, footer {
+    padding: $internalSpaceSmall 0;
+    @media screen and (min-width: $medium) {
+        padding: $internalSpaceLarge 0;
+    }
+}
+
+@function colGenerator($cols, $gutter: 15rem){
+    @return calc((100% - #{$gutter}) / #{$cols});
+}
+
+@mixin lateralCompression {
+    @media screen and (max-width: $small) {
+        padding-left: $internalSpaceSmall;
+        padding-right: $internalSpaceSmall;
+    }
+    @media screen and (min-width: $medium) {
+        padding-left: calc(15% / 2);
+        padding-right: calc(15% / 2);
+    }
+    @media screen and (min-width: $large) {
+        padding-left: calc(25% / 2);
+        padding-right: calc(25% / 2);
+    }
+}
+
+// Grid system (very basic as im on the clock)
+
+.grid {
+    @media screen and (min-width: $medium) {
+        display: flex;
+        justify-content: space-between;
+    }
+    &.two-col {
+        div {
+            @media screen and (max-width: $small) {
+                width: 100%;
+            }
+            @media screen and (min-width: $medium) {
+                width: colGenerator(2, 7.5rem);
+            }
+            @media screen and (min-width: $large) {
+                width: colGenerator(2);
+            }
+        }
+    }
+    &.four-col {
+        div {
+            @media screen and (max-width: $small) {
+                width: 100%;
+            }
+            @media screen and (min-width: $medium) {
+                width: colGenerator(4, 0rem);
+            }
+        }
+    }
+}
+
+// Allignment
+
+.center,
+.center-left,
+.end-to-end {
+    display: flex;
+    justify-content: center;
+}
+
+.center,
+.center-left {
+    flex-direction: column;
+}
+
+.center-left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+    align-items: center;
+}
+
+.end-to-end {
+    justify-content: space-between;
+    align-items: center;
+}

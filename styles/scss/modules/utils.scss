@@ -1,0 +1,26 @@
+// This file holds helper and fixit classes
+
+* {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1 rem = 10px, easy maths 
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+#carousel::-webkit-scrollbar {
+    display: none;
+}
+  
+#carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.img-back {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

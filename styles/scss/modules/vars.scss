@@ -1,0 +1,27 @@
+// This file contains all used variables
+
+// Color variables
+
+$brandPrimary: #F4ECDC;
+$brandAccent: #48521F;
+$brandPrimaryDarken: darken($brandPrimary, 20%);
+$brandContrast: #fff;
+$brandSoft: lighten($brandAccent, 20%);
+$brandDark: black;
+
+// Breakpoint variables 
+
+$small: 39.9375em;
+$medium: 40em;
+$large: 64em;
+
+// Layout variables
+
+$blockSpaceLarge: 7.5rem;
+$blockSpaceSmall: 3rem;
+$internalSpaceSmall: 3rem;
+$internalSpaceLarge: 7.5rem;
+
+// Component variables 
+
+$btnPadding: 1rem;

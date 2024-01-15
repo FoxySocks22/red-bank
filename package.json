@@ -1,0 +1,14 @@
+{
+  "name": "red-bank",
+  "version": "1.0.0",
+  "description": "Dummy landing page for 01",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node-sass -w styles/scss/main.scss styles/css/main.css --output-style compressed"
+  },
+  "author": "Beau Buxton",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

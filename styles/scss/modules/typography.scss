@@ -1,0 +1,75 @@
+/* This file contais all general style rules related to typography. These 
+rules can be overwritten in other files. This appraoch reduces file size. */
+
+* {
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+// Headings 
+.heading, .copy {
+    line-height: 1;
+}
+
+.heading {
+    margin: 0;
+    padding: 0;
+}
+
+.heading.primary {
+    text-transform: lowercase;
+    font-weight: bold;
+    font-size: 5rem;
+    @media screen and (max-width: $small) {
+        font-size: 3.5rem;
+    }
+    @media screen and (min-width: $large) {
+        font-size: 6rem;
+    }
+}
+
+.heading.secondary,
+.heading.minor {
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.heading.secondary {
+    font-size: 2.5rem;
+    @media screen and (max-width: $small) {
+        font-size: 2rem;
+    }
+    @media screen and (min-width: $large) {
+        font-size: 3.5rem;
+    }
+}
+
+.heading.minor {
+    font-size: 2rem;
+    @media screen and (max-width: $small) {
+        font-size: 1.75rem;
+    }
+    @media screen and (min-width: $large) {
+        font-size: 2.2rem;
+    }
+}
+
+// Longcopy
+
+.copy {
+    font-weight: 200;
+    @media screen and (max-width: $small) {
+        font-size: 1.5rem;
+    }
+    @media screen and (min-width: $medium) {
+        font-size: 1.8rem;
+    }
+}
+
+.copy.light {
+    color: $brandContrast;
+}
+
+.copy.dark {
+    color: $brandSoft;
+}

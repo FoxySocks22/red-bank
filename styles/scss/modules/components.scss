@@ -1,0 +1,97 @@
+/* This file holds generall classes and styles for 
+repeatable blocks of HTML. */
+
+// DRY classes
+
+.transition {
+    transition: all .5s;
+    &:hover {
+        transition: all .5s;
+    }
+}
+
+.sudo { // I know its spelled pseudo :) 
+    position: relative;
+    transition: all .5s;
+    &::after, &::before {
+        content: '';
+        position: absolute;
+        transition: all .5s;
+        bottom: 0;
+        left: 12.5%;
+        width: 75%;
+        height: .2rem;
+    }
+    &:hover {
+        transition: all .5s;
+    }
+}
+
+// Links and navigaton
+
+a.link {
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    &:hover {
+        > span {
+            transform: translateX(2rem);
+        }
+    }
+    > span {
+        font-size: 1.8rem;
+        display: block;
+    }
+    > ion-icon {
+        font-size: 1.8rem;
+    }
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    &_item {
+        display: inline-block;
+        &:not(:last-of-type){
+            margin-right: 1.5rem;
+        }
+    }
+    &_link {
+        color: $brandContrast;
+        &:hover {
+            color: darken($brandContrast, 20%);
+        }
+    }
+}
+
+// Buttons 
+
+.btn {
+    display: block;
+    width: fit-content;
+    border-radius: .5rem;
+    padding: $btnPadding;
+    border: .2rem solid $brandPrimary;
+    font-weight: 400;
+}
+
+.btn-full {
+    background: $brandPrimary;
+    color: $brandAccent;
+    &:hover {
+        color: $brandPrimary;
+        background: transparent;
+    }
+}
+
+.btn-ghost {
+    color: $brandPrimary;
+    background: transparent;
+    &:hover {
+        color: $brandAccent;
+        background: $brandPrimary;
+    }
+}
